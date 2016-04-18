@@ -25,4 +25,33 @@ public class Cotxe {
 	public void printCar(){
 		System.out.println(carburant + " " + this.color);
 	}
+	
+	public void showCarColour(){
+		switch(this.color){
+		case "blanc":
+			System.out.println("El color es: " + this.color);
+			break;
+		case "negre":
+			System.out.println("El color es: " + this.color);
+			break;
+		case "vermell":
+			System.out.println("El color es: " + this.color);
+			break;
+		case "groc":
+			System.out.println("El color es: " + this.color);
+			break;
+		case "blau":
+			System.out.println("El color es: " + this.color);
+			break;
+		default:
+			System.out.println("No tenim el color al cataleg");
+			break;
+		}
+	}
+	
+	public void carCruiseControl(int speed){
+		if (speed<=60) System.out.println("LEEEEEENTOOOOOOOO!!!!!!!");
+		else if (speed>60 && speed<=120) System.out.println("Vas bien");
+		else System.out.println("A TOPEEEEEEEEEE!!!!!!!");
+	}
 }

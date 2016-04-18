@@ -37,6 +37,20 @@ public class Condicionals {
 		catch (ArithmeticException e){
 			System.out.println(e.toString());
 		}
+		
+		/*
+		 * switch(operator){
+		 * 		case "+":
+		 * 			System.out.println(this.num1+this.num2);
+		 * 			break;
+		 * 		case .......
+		 * 
+		 * 		default:
+		 * 			System.out.println("Operador no valid");
+		 * 			break;
+		 * }
+		 * 
+		 */
 	}
 
 }

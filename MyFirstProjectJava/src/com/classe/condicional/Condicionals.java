@@ -29,8 +29,14 @@ public class Condicionals {
 	}
 	
 	public void operate(){
-		if (this.operator.equals("+")) System.out.println(this.num1+this.num2);
-		else if (this.operator.equals("-")) System.out.println(this.num1-this.num2);		
+		try{
+			if (this.operator.equals("+")) System.out.println(this.num1+this.num2);
+			else if (this.operator.equals("-")) System.out.println(this.num1-this.num2);
+			else if (this.operator.equals("/")) System.out.println(this.num1/this.num2);
+		}
+		catch (ArithmeticException e){
+			System.out.println(e.toString());
+		}
 	}
 
 }

@@ -15,6 +15,8 @@ public class Main {
 		Condicionals cond2 = new Condicionals(30,8,"+");
 		cond2.compare();
 		cond2.operate();
+		Condicionals cond3 = new Condicionals(0,0,"/");
+		cond3.operate();
 	}
 
 }

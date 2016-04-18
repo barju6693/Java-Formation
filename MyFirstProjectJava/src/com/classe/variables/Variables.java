@@ -19,7 +19,7 @@ public class Variables {
 	
 	public void color(){
 		System.out.println(this.colour);
-		System.out.println(this.Colour);
+		System.out.println(Colour);
 	}
 
 }

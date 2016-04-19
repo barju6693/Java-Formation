@@ -44,8 +44,10 @@ public class Bucles {
 	}
 	
 	public void multFor(int mult){
+		int arr[] = new int[11];
 		for (int i=0; i<11;i++){
-			System.out.println(i*mult);
+			arr[i]=i*mult;
+			System.out.println(arr[i]);
 		}
 	}
 	

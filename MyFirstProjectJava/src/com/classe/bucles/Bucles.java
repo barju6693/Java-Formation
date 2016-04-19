@@ -47,7 +47,9 @@ public class Bucles {
 		int arr[] = new int[11];
 		for (int i=0; i<11;i++){
 			arr[i]=i*mult;
-			System.out.println(arr[i]);
+		}
+		for(int x : arr){
+			System.out.println(x);
 		}
 	}
 	
@@ -58,4 +60,5 @@ public class Bucles {
 			i++;
 		}
 	}
+	
 }

@@ -31,7 +31,10 @@ public class MenPrinc {
 				System.out.println("Modificar alumne");
 				break;
 			case "0":
-				System.out.println("Exit");
+				System.exit(0);
+				break;
+			default:
+				System.out.println("Opcio no valida");
 				break;
 			}
 			ImprimirPantalla imp = new ImprimirPantalla();

@@ -11,6 +11,7 @@ public class Llegir {
 		BufferedReader bfr = new BufferedReader(isr);
 		String option ="";
 		try{
+			System.out.println("Entra la opcio:");
 			option = bfr.readLine();
 		}
 		catch(IOException e){

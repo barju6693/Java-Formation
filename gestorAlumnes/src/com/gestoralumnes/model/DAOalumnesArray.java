@@ -7,11 +7,11 @@ public class DAOalumnesArray {
 
 	public static ArrayList<Alumne> list = new ArrayList<Alumne>();
 	
-	public static void altaAlumnes(Alumne alu){
+	public void altaAlumnes(Alumne alu){
 		list.add(alu);
 	}
 	
-	public static void baixaAlumne(String name){
+	public void baixaAlumne(String name){
 		Alumne alu = new Alumne();
 		alu.setName(name);
 		if (list.contains(alu)){

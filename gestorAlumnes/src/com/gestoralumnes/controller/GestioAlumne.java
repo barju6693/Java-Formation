@@ -8,13 +8,13 @@ public class GestioAlumne {
 
 public ArrayList<Alumne> alumnes = new ArrayList<Alumne>();
 	
-	public void addAlumne(Alumne alumne){
+	/*public void addAlumne(Alumne alumne){
 		this.alumnes.add(alumne);
 	}
 	
 	public void deleteAlumne(String name){
 		
-	}
+	}*/
 	
 	public void getAlumnes(){
 		System.out.println("-------LIST--------");

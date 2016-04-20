@@ -1,5 +1,6 @@
 package com.gestoralumnes.vista;
 
+import com.gestoralumnes.model.DAOalumnesArray;
 import com.gestoralumnes.negoci.Alumne;
 
 public class PrintScreen {
@@ -20,5 +21,14 @@ public class PrintScreen {
 	
 	public void printEnterName(){
 		System.out.println("Entra el nom de l'alumne:");
+	}
+	
+	public void printAlumensList(){
+		DAOalumnesArray bd = new DAOalumnesArray();
+		System.out.println("-------LIST--------");
+		for (Alumne alu : bd.getAlumnesList()){
+			System.out.println(alu.getName());
+		}
+		System.out.println("-------LIST--------");
 	}
 }

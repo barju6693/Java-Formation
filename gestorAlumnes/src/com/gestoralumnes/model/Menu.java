@@ -11,12 +11,14 @@ public class Menu {
 	public ReadInfo readI;
 	public String resposta;
 	public GestioAlumne gestAlu;
+	public DAOalumnesArray bdAlu;
 	
 	
 	public void launch(){
 		this.printS = new PrintScreen();
 		this.readI = new ReadInfo();
 		this.gestAlu = new GestioAlumne();
+		this.bdAlu = new DAOalumnesArray();
 		this.printS.printInfo();
 		this.resposta = readI.keybInput();
 		tractaResposta(this.resposta);
@@ -30,17 +32,21 @@ public class Menu {
 			case "1":
 				System.out.println("Alta alumne");
 				this.printS.printEnterName();
-				this.gestAlu.addAlumne(new Alumne(readI.keybInput()));
+				Alumne alu = new Alumne();
+				alu.setName(readI.keybInput());
+				this.bdAlu.altaAlumnes(alu);
 				break;
 			case "2":
 				System.out.println("Baixa alumne");
+				this.bdAlu.baixaAlumne(readI.keybInput());
 				break;
 			case "3":
 				System.out.println("Mostrar alumne");
-				this.gestAlu.getAlumnes();
+				this.printS.printAlumensList();
 				break;
 			case "4":
 				System.out.println("Modificar alumne");
+				this.bdAlu.modAlumne(readI.keybInput(),readI.keybInput());
 				break;
 			case "0":
 				//System.exit(0);

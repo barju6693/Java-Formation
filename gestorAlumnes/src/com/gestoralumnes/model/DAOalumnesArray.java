@@ -15,7 +15,6 @@ public class DAOalumnesArray {
 		Alumne alu = new Alumne();
 		alu.setName(name);
 		if (list.contains(alu)){
-			System.out.println("SI");
 			list.remove(alu);
 		}
 	}

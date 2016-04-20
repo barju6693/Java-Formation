@@ -34,11 +34,13 @@ public class Menu {
 				this.printS.printEnterName();
 				Alumne alu = new Alumne();
 				alu.setName(readI.keybInput());
-				this.bdAlu.altaAlumnes(alu);
+				//this.bdAlu.altaAlumnes(alu);
+				gestAlu.altaAlumnes(alu);
 				break;
 			case "2":
 				System.out.println("Baixa alumne");
-				this.bdAlu.baixaAlumne(readI.keybInput());
+				//this.bdAlu.baixaAlumne(readI.keybInput());
+				gestAlu.baixaAlumne(readI.keybInput());
 				break;
 			case "3":
 				System.out.println("Mostrar alumne");
@@ -46,7 +48,8 @@ public class Menu {
 				break;
 			case "4":
 				System.out.println("Modificar alumne");
-				this.bdAlu.modAlumne(readI.keybInput(),readI.keybInput());
+				//this.bdAlu.modAlumne(readI.keybInput(),readI.keybInput());
+				gestAlu.modAlumne(readI.keybInput(), readI.keybInput());
 				break;
 			case "0":
 				//System.exit(0);

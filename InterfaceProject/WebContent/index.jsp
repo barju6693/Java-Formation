@@ -10,17 +10,21 @@
 <body>
 
 	<form action="inici.jsp" method="get">
-
-		<button type="submit" id="Afegirb" name="Afegirb" value="Afegirb">Afegir</button>
+		<button class="buton" type="submit" id="Afegirb" name="Afegirb" value="Afegirb">Afegir</button>
+	</form>
+	
+	<form action="borrarPerDni.jsp" method="get">
 		<button type="submit" id="Borrarb" name="Borrarb" value="Borrarb">Borrar</button>
-
 	</form>
 	
 	<form action="GestorTreballadors" method="get">
-
 		<button type="submit" id="borrTb" name="borrTb" value="borrTb">Borrar Tot</button>
-
 	</form>
-
+	<form action="GestorTreballadors" method="get">
+		<button type="submit" id="showAll" name="showAll" value="showAll">Mostra Tot</button>
+	</form>
+	<form action="buscarPerDni.jsp" method="get">
+		<button type="submit" id="Borrarb" name="Borrarb" value="Borrarb">Buscar per DNI</button>
+	</form>
 </body>
 </html>

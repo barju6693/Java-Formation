@@ -3,5 +3,5 @@ import java.util.List;
 public interface IReadDao<T> {
 
 	public List<T> search(T t);
-	public T read(T t);
+	public T read(String t);
 }

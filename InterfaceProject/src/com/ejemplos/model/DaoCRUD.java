@@ -1,6 +1,7 @@
 package com.ejemplos.model;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -57,9 +58,17 @@ public class DaoCRUD implements IDaoCRUD<Treballador> {
 	}
 
 	@Override
-	public Treballador read(Treballador t) {
+	public Treballador read(String dni) {
 		// TODO Auto-generated method stub
-		return null;
+		Treballador treb = null;
+		try{
+			treb = this.selectRecordsFromDbUserTable(this.getConnection(), "treballadors2",dni);
+		}
+		catch (SQLException e){
+			e.getMessage();
+		}
+		
+		return treb;
 	}
 
 	@Override
@@ -205,5 +214,103 @@ public class DaoCRUD implements IDaoCRUD<Treballador> {
 		}
 
 	}
+	
+	
+	/*public Treballador selectAllRecordsFromDbUserTable(Connection dbConnection, String dbName) throws SQLException {
+
+		PreparedStatement preparedStatement = null;
+		Treballador treb = null;
+
+		String selectTableSQL = "SELECT * FROM "+ dbName;
+
+		try {
+			preparedStatement = dbConnection.prepareStatement(selectTableSQL);
+
+			// execute select SQL statement
+			ResultSet rs = preparedStatement.executeQuery();
+
+			while (rs.next()) {
+				
+				treb = new Treballador();
+				treb.setID(rs.getInt("id"));
+				treb.setName(rs.getString("nom"));
+				treb.setCognom1(rs.getString("cognom1"));
+				treb.setCognom2(rs.getString("cognom2"));
+				treb.setEMail(rs.getString("email"));
+				treb.setDni(rs.getString("dni"));
+				treb.setTelefon(rs.getString("telefon"));
+				treb.setDataNaixement(String.valueOf(rs.getDate("dataN")));
+
+			}
+
+		} catch (SQLException e) {
+
+			System.out.println(e.getMessage());
+
+		} finally {
+
+			if (preparedStatement != null) {
+				preparedStatement.close();
+			}
+
+			if (dbConnection != null) {
+				dbConnection.close();
+			}
+
+		}
+		
+		return treb;
+
+	}*/
+	
+	public Treballador selectRecordsFromDbUserTable(Connection dbConnection, String dbName, String dni) throws SQLException {
+
+		PreparedStatement preparedStatement = null;
+		Treballador treb = null;
+
+		String selectTableSQL = "SELECT * FROM "+ dbName + " WHERE (dni = '" + dni +"');";
+		System.out.println(selectTableSQL);
+		
+
+		try {
+			preparedStatement = dbConnection.prepareStatement(selectTableSQL);
+
+			// execute select SQL statement
+			ResultSet rs = preparedStatement.executeQuery();
+
+			while (rs.next()) {
+				
+				treb = new Treballador();
+				treb.setID(rs.getInt("id"));
+				treb.setName(rs.getString("nom"));
+				treb.setCognom1(rs.getString("cognom1"));
+				treb.setCognom2(rs.getString("cognom2"));
+				treb.setEMail(rs.getString("email"));
+				treb.setDni(rs.getString("dni"));
+				treb.setTelefon(rs.getString("telefon"));
+				treb.setDataNaixement(String.valueOf(rs.getDate("dataN")));
+
+			}
+
+		} catch (SQLException e) {
+
+			System.out.println(e.getMessage());
+
+		} finally {
+
+			if (preparedStatement != null) {
+				preparedStatement.close();
+			}
+
+			if (dbConnection != null) {
+				dbConnection.close();
+			}
+
+		}
+		
+		return treb;
+
+	}
+	
 }
 	

@@ -1,8 +1,10 @@
 package com.ejemplos.model;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -40,23 +42,45 @@ public class GestorTreballadors extends HttpServlet {
 		System.out.println(treb.toString());
 		
 		DaoCRUD dao = new DaoCRUD();
-		/*try{
-			dao.insertRecordIntoDbUserTable(dao.getConnection(), "treballadors2",treb);
-		}
-		catch (SQLException e){
-			e.getMessage();
-		}*/
 		
 		if (request.getParameter("submitAdd") != null) {
 			dao.create(treb);
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+			dispatcher.forward(request, response);
 		} 
-		else if (request.getParameter("Borrar") != null) {
+		else if (request.getParameter("submitDelete") != null) {
 			dao.delete(request.getParameter("dni").toString());
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+			dispatcher.forward(request, response);
 		} 
 		else if (request.getParameter("borrTb") != null) {
 			dao.deleteAll();
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+			dispatcher.forward(request, response);
 		} 
+		else if (request.getParameter("submitFindByDNI") != null){
+			treb = dao.read(request.getParameter("dni"));
+			
+			response.setContentType("text/html");
+			PrintWriter out = response.getWriter();
+			
+			out.println("<html>");
+			out.println("<head><title> Empleats </title></head>");
+			out.println("<body>"); 
+			out.println(treb.getID());
+			out.println(treb.getName());
+			out.println(treb.getCognom1());
+			out.println(treb.getCognom2());
+			out.println(treb.getEMail());
+			out.println(treb.getDni());
+			out.println(treb.getTelefon());
+			out.println(treb.getDataNaixement());
+			out.println("</body>");
+			out.println("</html>");
+		}
 		
+		/*RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+		dispatcher.forward(request, response);*/
 		
 	}
 

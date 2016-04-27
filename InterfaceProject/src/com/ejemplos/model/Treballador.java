@@ -2,6 +2,7 @@ package com.ejemplos.model;
 
 public class Treballador {
 
+	public int ID;
 	public String Name;
 	public String Cognom1;
 	public String Cognom2;
@@ -10,6 +11,13 @@ public class Treballador {
 	public String dni;
 	public String dataNaixement;
 
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
+	}
 
 	public String getName() {
 		return Name;

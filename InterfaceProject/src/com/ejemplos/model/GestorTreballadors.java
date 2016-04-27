@@ -37,6 +37,8 @@ public class GestorTreballadors extends HttpServlet {
 		treb.setDni(request.getParameter("dni"));
 		treb.setDataNaixement(request.getParameter("dataN"));
 		
+		System.out.println(treb.toString());
+		
 		DaoCRUD dao = new DaoCRUD();
 		/*try{
 			dao.insertRecordIntoDbUserTable(dao.getConnection(), "treballadors2",treb);
@@ -45,13 +47,13 @@ public class GestorTreballadors extends HttpServlet {
 			e.getMessage();
 		}*/
 		
-		if (request.getParameter("Afegir") != null) {
+		if (request.getParameter("submitAdd") != null) {
 			dao.create(treb);
 		} 
 		else if (request.getParameter("Borrar") != null) {
 			dao.delete(request.getParameter("dni").toString());
 		} 
-		else if (request.getParameter("borrT") != null) {
+		else if (request.getParameter("borrTb") != null) {
 			dao.deleteAll();
 		} 
 		

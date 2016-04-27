@@ -2,7 +2,7 @@ package com.ejemplos.model;
 
 public class ExemplePolimorfisme {
 
-	public void polimorf(){
+	/*public void polimorf(){
 		Treballador treb = new Treballador();
 		DaoCRUD dao = new DaoCRUD();
 		
@@ -16,6 +16,6 @@ public class ExemplePolimorfisme {
 		read.read(treb);
 		read.search(treb);
 		((DaoCRUD)read).update(treb);
-	}
+	}*/
 	
 }
